@@ -4,9 +4,10 @@ import java.util.Comparator;
 
 public class Pessoa implements Comparable<Pessoa> {
   //atributos
-  private String nome;
+  private final String nome;
+  @SuppressWarnings("FieldMayBeFinal")
   private int idade;
-  private double altura;
+  private final double altura;
 
   public Pessoa(String nome, int idade, double altura) {
     this.nome = nome;

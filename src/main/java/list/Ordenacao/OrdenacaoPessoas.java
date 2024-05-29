@@ -6,7 +6,7 @@ import java.util.List;
 
 public class OrdenacaoPessoas {
   //atributo
-  private List<Pessoa> pessoaList;
+  private final List<Pessoa> pessoaList;
 
   public OrdenacaoPessoas() {
     this.pessoaList = new ArrayList<>();
@@ -29,7 +29,7 @@ public class OrdenacaoPessoas {
   public List<Pessoa> ordenarPorAltura() {
     List<Pessoa> pessoasPorAltura = new ArrayList<>(pessoaList);
     if (!pessoaList.isEmpty()) {
-      Collections.sort(pessoasPorAltura, new ComparatorPorAltura());
+      pessoasPorAltura.sort(new ComparatorPorAltura());
       return pessoasPorAltura;
     } else {
       throw new RuntimeException("A lista está vazia!");
